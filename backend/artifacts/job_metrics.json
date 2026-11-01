@@ -1,0 +1,22 @@
+{
+  "trained_at": "2026-09-28T15:37:59.233243",
+  "training_samples": 900,
+  "test_samples": 300,
+  "features_count": 5243,
+  "logistic_regression": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0
+  },
+  "linear_svm": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0
+  }
+}

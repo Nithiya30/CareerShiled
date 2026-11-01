@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables are switched by the `dark` class on the document root. */
+:root {
+  --shield-bg: 248 250 252;
+  --shield-surface: 255 255 255;
+  --shield-card: 241 245 249;
+  --shield-card-hover: 226 232 240;
+  --shield-border: 226 232 240;
+  --shield-border-light: 203 213 225;
+  --shield-text: 15 23 42;
+  --shield-text-muted: 71 85 105;
+  --shield-muted: 100 116 139;
+  --scrollbar-track: #F8FAFC;
+  --scrollbar-thumb: #CBD5E1;
+  color-scheme: light;
+}
+
+.dark {
+  --shield-bg: 10 14 23;
+  --shield-surface: 17 24 39;
+  --shield-card: 21 29 46;
+  --shield-card-hover: 27 37 59;
+  --shield-border: 30 41 59;
+  --shield-border-light: 51 65 85;
+  --shield-text: 241 245 249;
+  --shield-text-muted: 148 163 184;
+  --shield-muted: 100 116 139;
+  --scrollbar-track: #0A0E17;
+  --scrollbar-thumb: #1E293B;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(var(--shield-bg));
+  color: rgb(var(--shield-text));
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar using theme variables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+:root:not(.dark) .text-slate-100 { color: #0F172A; }
+:root:not(.dark) .text-slate-200 { color: #1E293B; }
+:root:not(.dark) .text-slate-300 { color: #334155; }
+:root:not(.dark) .text-slate-400 { color: #475569; }
+:root:not(.dark) .text-slate-500,
+:root:not(.dark) .text-slate-600 { color: #64748B; }
+:root:not(.dark) .bg-slate-800 { background-color: #E2E8F0; }
+:root:not(.dark) .bg-slate-900 { background-color: #F8FAFC; }
+:root:not(.dark) .bg-slate-600 { background-color: #94A3B8; }
+:root:not(.dark) .border-slate-700,
+:root:not(.dark) .border-slate-800 { border-color: #CBD5E1; }

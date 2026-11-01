@@ -1,0 +1,107 @@
+{
+  "test_cases": [
+    {
+      "id": "case_1_legitimate_internship",
+      "name": "1. Legitimate Internship",
+      "type": "legitimate",
+      "payload": {
+        "job_title": "Junior Software Engineer Intern",
+        "company_name": "Acme Technologies Inc",
+        "recruiter_email": "careers@acme-tech.org",
+        "company_website": "https://acme-tech.org",
+        "location": "San Francisco, CA (Hybrid)",
+        "employment_type": "Full-time",
+        "salary": "$35 - $45 per hour",
+        "job_description": "Acme Technologies is seeking a motivated Software Engineering Intern to join our cloud infrastructure team. You will collaborate with senior engineers to build scalable RESTful APIs, write unit and integration tests, and participate in daily agile standups. We offer competitive stipend, mentorship, and full health insurance.",
+        "requirements": "Enrolled in Computer Science or related degree. Proficient in Python or TypeScript. Understanding of Git and basic web architectures.",
+        "benefits": "Health insurance, 401(k) matching, transit stipend, flexible hours."
+      },
+      "expected_risk": "Likely Legitimate",
+      "expected_min_score": 75
+    },
+    {
+      "id": "case_2_payment_scam",
+      "name": "2. Job Asking for Payment",
+      "type": "fraudulent",
+      "payload": {
+        "job_title": "Executive Virtual Administrative Assistant",
+        "company_name": "Global Peak Logistics",
+        "recruiter_email": "recruiting.globalpeak@gmail.com",
+        "company_website": "http://globalpeaklogistics-now.xyz",
+        "location": "Remote / Work from home",
+        "employment_type": "Full-time",
+        "salary": "$75 per hour ($150,000 / year)",
+        "job_description": "URGENT HIRING! We need an immediate Virtual Assistant. No experience needed! Immediate start with high weekly payout. Note: candidates must send a mandatory $250 background verification registration fee and equipment insurance deposit via Wire Transfer, Zelle, or Bitcoin before dispatch of home-office Apple laptop.",
+        "requirements": "Must have laptop and phone. Send wire transfer confirmation upon selection.",
+        "benefits": "Immediate payment, bonuses, flexible working schedule."
+      },
+      "expected_risk": "Likely Fraudulent",
+      "expected_max_score": 49
+    },
+    {
+      "id": "case_3_unrealistic_salary",
+      "name": "3. Unrealistic Salary / Phishing",
+      "type": "fraudulent",
+      "payload": {
+        "job_title": "Entry-Level Data Entry Clerk",
+        "company_name": "Apex Fast Express",
+        "recruiter_email": "hr-jobs-entry@yahoo.com",
+        "company_website": "",
+        "location": "Work From Home (Anywhere)",
+        "employment_type": "Part-time",
+        "salary": "$9,500 monthly ($114,000/yr for 10 hours/week)",
+        "job_description": "Immediate position available! Guaranteed employment without technical interview. Earn $9,500 every month for simple copy paste work. Telegram interview required immediately. Please send photos of front and back of your driver license and Social Security Card to hr_manager_fast on Telegram.",
+        "requirements": "No skills or experience required. Any age or background accepted.",
+        "benefits": "Instant daily wire payouts."
+      },
+      "expected_risk": "Likely Fraudulent",
+      "expected_max_score": 49
+    },
+    {
+      "id": "case_4_recruiter_domain_mismatch",
+      "name": "4. Recruiter Domain Mismatch",
+      "type": "suspicious",
+      "payload": {
+        "job_title": "Senior Cloud Architect",
+        "company_name": "Microsoft Corporation",
+        "recruiter_email": "recruiter.alex.smith@free-hiring-portal.net",
+        "company_website": "https://microsoft.com",
+        "location": "Redmond, WA",
+        "employment_type": "Full-time",
+        "salary": "$165,000 - $195,000",
+        "job_description": "Join Microsoft Azure cloud architecture team. Designing resilient enterprise cloud deployments across multi-region data centers. You will work on Kubernetes containerization, automated CI/CD pipelines, and zero-trust security postures.",
+        "requirements": "7+ years cloud engineering experience, Azure Solutions Architect Expert certification preferred.",
+        "benefits": "Comprehensive health coverage, 401(k), equity incentives."
+      },
+      "expected_risk": "Uncertain",
+      "expected_note": "Flags domain discrepancy between recruiter and corporate domain"
+    },
+    {
+      "id": "case_5_small_legitimate_company",
+      "name": "5. Small Legitimate Company with Limited Online Information",
+      "type": "uncertain_or_legitimate",
+      "payload": {
+        "job_title": "Local Bakery Operations Lead",
+        "company_name": "Sunrise Artisanal Breads",
+        "recruiter_email": "owner@sunriselocalbreads.com",
+        "company_website": "https://sunriselocalbreads.com",
+        "location": "Austin, TX",
+        "employment_type": "Full-time",
+        "salary": "$48,000 - $55,000 per year",
+        "job_description": "Sunrise Artisanal Breads is a local family-owned bakery looking for an experienced head of operations to manage morning baking shifts, local wholesale supplier orders, and storefront inventory. We value craftsmanship, reliability, and teamwork.",
+        "requirements": "2+ years food service or bakery management experience. Food handler certification.",
+        "benefits": "Paid time off, meal allowance, store discount."
+      },
+      "expected_axiom": "Unknown Rule applies: Sparse online info does NOT mark small business as fraud"
+    },
+    {
+      "id": "case_6_mixed_employee_reviews",
+      "name": "6. Company with Mixed Employee Reviews",
+      "type": "company_reputation",
+      "company_name": "Apex Logistics",
+      "claim_to_test": "Company has poor work-life balance.",
+      "expected_status": "Supported or Partially Supported",
+      "expected_axiom": "Recruitment Risk != Company Reputation"
+    }
+  ]
+}

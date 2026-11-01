@@ -1,0 +1,63 @@
+{
+  "emscad": {
+    "rows": 1200,
+    "columns": [
+      "job_id",
+      "title",
+      "location",
+      "department",
+      "salary_range",
+      "company_profile",
+      "description",
+      "requirements",
+      "benefits",
+      "telecommuting",
+      "has_company_logo",
+      "has_questions",
+      "employment_type",
+      "required_experience",
+      "required_education",
+      "industry",
+      "function",
+      "fraudulent"
+    ],
+    "missing_values": {},
+    "duplicate_count": 0,
+    "label_distribution": {
+      "0": 1100,
+      "1": 100
+    }
+  },
+  "reviews": {
+    "rows": 120,
+    "columns": [
+      "review_id",
+      "company",
+      "date",
+      "rating",
+      "review_text",
+      "work_life_balance",
+      "salary_benefits",
+      "career_growth",
+      "job_security",
+      "management",
+      "work_satisfaction",
+      "skill_development",
+      "culture",
+      "workload",
+      "likes",
+      "dislikes",
+      "source"
+    ],
+    "companies_count": 6,
+    "companies": [
+      "Google",
+      "Microsoft",
+      "Amazon",
+      "Apex Logistics",
+      "Sunrise Artisanal Breads",
+      "Meta"
+    ],
+    "average_overall_rating": 3.84
+  }
+}

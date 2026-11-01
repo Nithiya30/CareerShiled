@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CareerShield for Gmail</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <img src="icons/shield-48.png" alt="" width="34" height="34">
+        <div>
+          <strong>CareerShield</strong>
+          <span>Gmail recruitment checker</span>
+        </div>
+      </header>
+
+      <section class="connection-card" aria-live="polite">
+        <div class="status-row"><span id="backend-indicator" class="indicator"></span><span id="backend-status">Checking backend…</span></div>
+        <div class="status-row"><span id="auth-indicator" class="indicator"></span><span id="auth-status">Checking sign-in…</span></div>
+      </section>
+
+      <details class="settings">
+        <summary>Connection settings</summary>
+        <label for="backend-url">CareerShield API URL</label>
+        <input id="backend-url" type="url" autocomplete="url" spellcheck="false">
+        <label for="web-url">CareerShield website URL</label>
+        <input id="web-url" type="url" autocomplete="url" spellcheck="false">
+        <button id="save-settings" class="button secondary" type="button">Save connection settings</button>
+      </details>
+
+      <section id="pairing-panel" class="card" hidden>
+        <h1>Connect your account</h1>
+        <p>In the signed-in CareerShield website, choose <b>Connect extension</b> and copy the one-time pairing code here.</p>
+        <label for="pairing-code">One-time pairing code</label>
+        <input id="pairing-code" type="password" autocomplete="off" spellcheck="false" maxlength="100">
+        <button id="pair-button" class="button primary" type="button">Connect securely</button>
+      </section>
+
+      <section id="account-panel" class="card" hidden>
+        <div class="account-row">
+          <div><h1>Signed in</h1><p id="account-email" class="muted"></p></div>
+          <button id="sign-out" class="text-button" type="button">Sign out</button>
+        </div>
+      </section>
+
+      <section id="email-panel" class="card" hidden>
+        <h2>Selected Gmail message</h2>
+        <p id="email-subject" class="email-subject"></p>
+        <p id="email-sender" class="muted"></p>
+        <p id="email-date" class="muted"></p>
+        <p id="email-preview" class="email-preview"></p>
+        <div id="email-links-section" class="metadata-block" hidden>
+          <h3>Links shown as text</h3>
+          <ul id="email-links"></ul>
+        </div>
+        <div id="email-attachments-section" class="metadata-block" hidden>
+          <h3>Visible attachments · contents not read</h3>
+          <ul id="email-attachments"></ul>
+          <button id="open-upload" class="text-button" type="button">Open CareerShield document upload</button>
+        </div>
+        <p class="privacy-note">Only the message you selected is analyzed. Attachment contents are not accessible to this extension.</p>
+        <div class="button-row">
+          <button id="extract-email" class="button secondary" type="button">Select current email</button>
+          <button id="analyze-email" class="button primary" type="button">Analyze with CareerShield</button>
+        </div>
+      </section>
+
+      <section id="result-panel" class="card result-card" hidden>
+        <div class="result-heading">
+          <div><span class="eyebrow">JOB TRUST SCORE</span><strong id="trust-score" class="score"></strong></div>
+          <span id="risk-level" class="risk-badge"></span>
+        </div>
+        <p id="confidence" class="muted"></p>
+        <p class="privacy-note">Preliminary decision support for recruitment risk—not a definitive finding of fraud or company reputation.</p>
+        <div id="warning-section" class="metadata-block" hidden><h3>Warning indicators</h3><ul id="warning-list"></ul></div>
+        <div id="positive-section" class="metadata-block" hidden><h3>Supporting evidence</h3><ul id="positive-list"></ul></div>
+        <div id="unknown-section" class="metadata-block" hidden><h3>Unknown / unavailable</h3><ul id="unknown-list"></ul></div>
+        <div id="domain-section" class="metadata-block" hidden><h3>Sender domain observations</h3><p id="domain-observations" class="muted"></p></div>
+        <div class="button-row">
+          <button id="copy-summary" class="button secondary" type="button">Copy summary</button>
+          <button id="open-report" class="button primary" type="button">View report &amp; review optional checks</button>
+        </div>
+        <button id="check-another" class="text-button" type="button">Check another email</button>
+      </section>
+
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <footer>Private by design · No inbox scanning · No email sent to third-party AI</footer>
+    </main>
+    <script src="email-utils.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
